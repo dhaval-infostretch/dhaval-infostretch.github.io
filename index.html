@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="bower_components/webcomponentsjs/webcomponents.js" type="text/javascript"></script>
+      <link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import"
+      href="elements/my-message.html">
+<link rel="import"
+      href="elements/button-element.html">
+<link rel="import"
+      href="elements/my-todo-list.html">
+<link rel="stylesheet" href="style/main.css">
+  </head>
+  
+  <body>
+    <template is="auto-binding">
+        <section id="todoapp">
+            <header id="header">
+                <h1>todos</h1>
+            </header>
+            
+        <my-message-element text="{{text}}" todos="{{todos}}" checked="{{checked}}"></my-message-element>
+        <!--<my-button-element on-click={{submitTodo}}></my-button-element>-->                
+      
+        <todo-list id="todo-list" todos="{{todos}}" checked="{{checked}}" reflect></todo-list>      
+        </section>
+        <template if="{{todos.length > 0}}">
+          <footer style="font-size: 20px;text-align: center; padding-right: 7px;padding-top: 10px">remaining {{incompleteTodo}} of {{todos.length}}</footer> 
+        </template>
+        <footer id="info">
+            <div id="feature">
+                <h2>Feature of TODOmvc</h2>
+                    <li>
+                        Two-way data binding
+                    </li>
+                    <li>
+                        custom elements
+                    </li>
+                    <li>
+                        pure-polymer + vanillaJS
+                    </li>
+                    <li>
+                        shadow DOM manipulation
+                    </li>
+                    <li>
+                        attribute sharing
+                    </li>
+                    <li>
+                        web components
+                    </li>
+                    <li>
+                        event handling of custom elements
+                    </li>
+                
+            </div>
+			<p>Double-click to edit a todo</p>
+			<p>Created by dhaval mashruwala</a></p>
+		</footer>
+    </template>
+<script src="js/app.js"></script>
+</body>
+</html>
